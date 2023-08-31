@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
                 }
                 note.archivesList.size + 1 -> exitApp=false
                 else -> {
-                    if(command>note.archivesList.size) {
+                    if(command>note.archivesList.size || command<0) {
                         println("Команда не найдена! Повторите попытку.")
                     } else {
                         var exitNote = true
@@ -58,7 +58,7 @@ fun main(args: Array<String>) {
                                     }
                                     note.archivesList[command - 1].notesList.size + 1 -> exitNote = false
                                     else -> {
-                                        if (command>note.archivesList[command - 1].notesList.size) {
+                                        if (command2>note.archivesList[command - 1].notesList.size || command2<0) {
                                             println("Команда не найдена! Повторите попытку.")
                                         } else {
                                             note.printNote(command - 1, command2 - 1)
